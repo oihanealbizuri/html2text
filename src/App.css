@@ -19,10 +19,13 @@
 .controlPanel {
   background-color: gray;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.controllerButton {
-  margin: auto;
+.convertButton, .clearButton {
+  margin: 10px auto;
 }
 
 .textInput {

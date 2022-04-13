@@ -15,6 +15,7 @@ class App extends Component {
 
     this.handleHtmlChange = this.handleHtmlChange.bind(this);
     this.convertToPlainText = this.convertToPlainText.bind(this);
+    this.clearContent = this.clearContent.bind(this);
   }
 
   componentDidMount() {
@@ -29,6 +30,13 @@ class App extends Component {
     const {htmlText} = this.state;
     let plain = htmlText.replace(/<[^>]+>/g, '');
     this.setState({plainText: plain});
+  }
+
+  clearContent() {
+    this.setState({
+      htmlText: "",
+      plainText: ""
+    })
   }
 
   render() {
@@ -58,12 +66,22 @@ class App extends Component {
           </div>
           <div className={"controlPanel"} key="controlPanel">
             <Button
-                className={"controllerButton"}
+                className={"convertButton"}
                 active={true}
                 minimal={true}
                 outlined={true}
+                intent={Intent.PRIMARY}
                 onClick={() => this.convertToPlainText()}
-                // iconOnly={true}
+                icon={"circle-arrow-right"}
+            />
+            <Button
+                className={"clearButton"}
+                active={true}
+                minimal={true}
+                outlined={true}
+                intent={Intent.DANGER}
+                onClick={() => this.clearContent()}
+                icon={"trash"}
             />
           </div>
           <div className={"plainText"} key="plainText">
