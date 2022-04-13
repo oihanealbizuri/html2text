@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
-import { Intent, TextArea} from "@blueprintjs/core";
-import {Component} from "react";
+import { Intent, TextArea } from "@blueprintjs/core";
+import { Component } from "react";
 import GridLayout from "react-grid-layout";
 
 
@@ -43,7 +42,7 @@ class App extends Component {
           <div className={"header"} key="header">header</div>
           <div className={"htmlText"} key="htmlText">
             <TextArea
-                className={"textInput"}
+                className={"textInput bp4-small"}
                 fill={true}
                 intent={Intent.PRIMARY}
                 // onChange={this.handleChange}
@@ -51,7 +50,15 @@ class App extends Component {
             />
           </div>
           <div className={"controlPanel"} key="controlPanel">control</div>
-          <div className={"plainText"} key="plainText">converted</div>
+          <div className={"plainText"} key="plainText">
+            <TextArea
+                className={"textInput bp4-small"}
+                fill={true}
+                intent={Intent.PRIMARY}
+                // onChange={this.handleChange}
+                value={this.state.search}
+            />
+          </div>
         </GridLayout>
     );
   }
