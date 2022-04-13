@@ -43,9 +43,9 @@ class App extends Component {
   render() {
     const layout = [
       { i: "header", x: 0, y: 0, w: 11, h: 5, static: true },
-      { i: "htmlText", x: 0, y: 5, w: 5, h: 32, static: true },
-      { i: "controlPanel", x: 5, y: 5, w: 1, h: 32, static: true },
-      { i: "plainText", x: 6, y: 5, w: 5, h: 32, static: true }
+      { i: "htmlText", x: 0, y: 5, w: 5.2, h: 32, static: true },
+      { i: "controlPanel", x: 5.2, y: 5, w: 0.6, h: 32, static: true },
+      { i: "plainText", x: 5.8, y: 5, w: 5.2, h: 32, static: true }
     ];
     return (
         <GridLayout
@@ -92,7 +92,7 @@ class App extends Component {
                 className={"textInput bp4-small"}
                 readOnly={true}
                 fill={true}
-                intent={Intent.PRIMARY}
+                intent={Intent.NONE}
                 value={this.state.plainText}
             />
           </div>

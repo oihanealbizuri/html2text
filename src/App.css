@@ -17,12 +17,11 @@
 }
 
 .logo {
-  height: 100%;
+  height: 95%;
   width: auto;
 }
 
 .controlPanel {
-  background-color: gray;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,10 +30,12 @@
 
 .convertButton, .clearButton {
   margin: 10px auto;
+  border-radius: 7px;
 }
 
 .textInput {
   height: inherit !important;
+  border-radius: 10px;
 }
 
 body {
