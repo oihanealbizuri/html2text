@@ -41,7 +41,15 @@ class App extends Component {
             width={800}
         >
           <div className={"header"} key="header">header</div>
-          <div className={"htmlText"} key="htmlText">original</div>
+          <div className={"htmlText"} key="htmlText">
+            <TextArea
+                className={"textInput"}
+                fill={true}
+                intent={Intent.PRIMARY}
+                // onChange={this.handleChange}
+                value={this.state.search}
+            />
+          </div>
           <div className={"controlPanel"} key="controlPanel">control</div>
           <div className={"plainText"} key="plainText">converted</div>
         </GridLayout>

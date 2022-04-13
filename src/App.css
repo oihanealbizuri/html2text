@@ -4,6 +4,12 @@
 @import 'react-grid-layout/css/styles.css';
 @import 'react-resizable/css/styles.css';
 
+.mainLayout {
+  background-color: aquamarine;
+  height: content-box;
+  max-height: content-box;
+}
+
 .header {
   text-align: center;
   display: flex;
@@ -20,5 +26,13 @@
 
 .plainText {
   background-color: burlywood;
+}
+
+.textInput {
+  height: inherit !important;
+}
+
+textarea {
+  resize: none;
 }
 
