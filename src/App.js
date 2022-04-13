@@ -9,7 +9,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      htmlText: null,
+      htmlText: "",
       plainText: null
     };
 
@@ -53,6 +53,7 @@ class App extends Component {
           <div className={"plainText"} key="plainText">
             <TextArea
                 className={"textInput bp4-small"}
+                readOnly={true}
                 fill={true}
                 intent={Intent.PRIMARY}
                 value={this.state.plainText}
