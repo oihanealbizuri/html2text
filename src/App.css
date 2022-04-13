@@ -5,7 +5,6 @@
 @import 'react-resizable/css/styles.css';
 
 .mainLayout {
-  background-color: aquamarine;
   height: content-box;
   max-height: content-box;
 }
@@ -13,7 +12,13 @@
 .header {
   text-align: center;
   display: flex;
-  background-color: red;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  height: 100%;
+  width: auto;
 }
 
 .controlPanel {
@@ -30,6 +35,10 @@
 
 .textInput {
   height: inherit !important;
+}
+
+body {
+  background-color: #F7E8D3;
 }
 
 textarea {

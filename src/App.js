@@ -2,6 +2,7 @@ import './App.css';
 import { Intent, TextArea, Button } from "@blueprintjs/core";
 import { Component } from "react";
 import GridLayout from "react-grid-layout";
+import { ReactComponent as Html2text } from "./html2text_logo.svg";
 
 
 class App extends Component {
@@ -41,10 +42,10 @@ class App extends Component {
 
   render() {
     const layout = [
-      { i: "header", x: 0, y: 0, w: 11, h: 4, static: true },
-      { i: "htmlText", x: 0, y: 4, w: 5, h: 33, static: true },
-      { i: "controlPanel", x: 5, y: 4, w: 1, h: 33, static: true },
-      { i: "plainText", x: 6, y: 4, w: 5, h: 33, static: true }
+      { i: "header", x: 0, y: 0, w: 11, h: 5, static: true },
+      { i: "htmlText", x: 0, y: 5, w: 5, h: 32, static: true },
+      { i: "controlPanel", x: 5, y: 5, w: 1, h: 32, static: true },
+      { i: "plainText", x: 6, y: 5, w: 5, h: 32, static: true }
     ];
     return (
         <GridLayout
@@ -54,7 +55,9 @@ class App extends Component {
             rowHeight={5}
             width={800}
         >
-          <div className={"header"} key="header">header</div>
+          <div className={"header"} key="header">
+            <Html2text className={"logo"} />
+          </div>
           <div className={"htmlText"} key="htmlText">
             <TextArea
                 className={"textInput bp4-small"}
