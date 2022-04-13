@@ -1,11 +1,13 @@
 import './App.css';
 import React, { Component } from "react";
 import GridLayout from "react-grid-layout";
-import { Intent, TextArea, Button, Switch } from "@blueprintjs/core";
+import { Intent, TextArea, Button, Switch, FocusStyleManager } from "@blueprintjs/core";
 import { ReactComponent as Html2text } from "./html2text_logo.svg";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from './theme';
 import { GlobalStyles } from './global';
+
+FocusStyleManager.onlyShowFocusOnTabs();
 
 
 class App extends Component {
