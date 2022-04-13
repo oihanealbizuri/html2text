@@ -1,7 +1,7 @@
 import './App.css';
-import { Intent, TextArea, Button, Switch } from "@blueprintjs/core";
-import React, { useState, Component } from "react";
+import React, { Component } from "react";
 import GridLayout from "react-grid-layout";
+import { Intent, TextArea, Button, Switch } from "@blueprintjs/core";
 import { ReactComponent as Html2text } from "./html2text_logo.svg";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from './theme';
@@ -70,7 +70,6 @@ class App extends Component {
               <div className={"header"} key="header">
                 <Html2text className={"logo"} />
                 <Switch
-                    /*{...this.state}}*/
                     className={"dayNightSwitch"}
                     innerLabel="day"
                     innerLabelChecked="night"
@@ -118,8 +117,6 @@ class App extends Component {
                 />
               </div>
             </GridLayout>
-            <footer>
-            </footer>
           </>
         </ThemeProvider>
     );

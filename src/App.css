@@ -21,6 +21,11 @@
   width: auto;
 }
 
+.dayNightSwitch {
+  position: absolute;
+  right: 5px;
+}
+
 .controlPanel {
   display: flex;
   flex-direction: column;
