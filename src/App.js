@@ -13,15 +13,15 @@ class App extends Component {
       plainText: null
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleHtmlChange = this.handleHtmlChange.bind(this);
   }
 
   componentDidMount() {
-    const {htmlText} = this.state;
+    const {htmlText, plainText} = this.state;
   }
 
-  handleChange(htmlText) {
-    console.log(htmlText);
+  handleHtmlChange(event) {
+    this.setState({htmlText: event.target.value});
   }
 
   render() {
@@ -45,8 +45,8 @@ class App extends Component {
                 className={"textInput bp4-small"}
                 fill={true}
                 intent={Intent.PRIMARY}
-                // onChange={this.handleChange}
-                value={this.state.search}
+                onChange={this.handleHtmlChange}
+                value={this.state.htmlText}
             />
           </div>
           <div className={"controlPanel"} key="controlPanel">control</div>
@@ -55,8 +55,7 @@ class App extends Component {
                 className={"textInput bp4-small"}
                 fill={true}
                 intent={Intent.PRIMARY}
-                // onChange={this.handleChange}
-                value={this.state.search}
+                value={this.state.plainText}
             />
           </div>
         </GridLayout>
