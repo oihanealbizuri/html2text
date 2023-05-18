@@ -2,7 +2,7 @@ import './App.css';
 import React, { Component } from "react";
 import GridLayout from "react-grid-layout";
 import { Intent, TextArea, Button, Switch, FocusStyleManager } from "@blueprintjs/core";
-import { ReactComponent as Html2text } from "./logo.png";
+import logo from "./header_logo.png";
 import { ThemeProvider } from "styled-components";
 import { convert } from "html-to-text";
 import { lightTheme, darkTheme } from './theme';
@@ -65,7 +65,7 @@ class App extends Component {
                         width={800}
                     >
                         <div className={"header"} key="header">
-                            <Html2text className={"logo"}/>
+                            <img className={"logo"} src={logo} alt={"html2text logo"}/>
                             <Switch
                                 className={"dayNightSwitch"}
                                 innerLabel="day"
