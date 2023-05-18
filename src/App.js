@@ -4,6 +4,7 @@ import GridLayout from "react-grid-layout";
 import { Intent, TextArea, Button, Switch, FocusStyleManager } from "@blueprintjs/core";
 import { ReactComponent as Html2text } from "./html2text_logo.svg";
 import { ThemeProvider } from "styled-components";
+import { convert } from "html-to-text";
 import { lightTheme, darkTheme } from './theme';
 import { GlobalStyles } from './global';
 
@@ -26,18 +27,13 @@ class App extends Component {
     this.changeTheme = this.changeTheme.bind(this);
   }
 
-  componentDidMount() {
-    const {htmlText, plainText, nightTheme} = this.state;
-  }
-
   handleHtmlChange(event) {
     this.setState({htmlText: event.target.value});
   }
 
   convertToPlainText() {
     const {htmlText} = this.state;
-    let plain = htmlText.replace(/<[^>]+>/g, '');
-    this.setState({plainText: plain});
+    this.setState({plainText: convert(htmlText)});
   }
 
   clearContent() {
