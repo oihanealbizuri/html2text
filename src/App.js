@@ -32,7 +32,7 @@ class App extends Component {
 
     convertToPlainText() {
         const { htmlText } = this.state;
-        this.setState({ plainText: convert(htmlText) });
+        this.setState({ plainText: convert(htmlText, { wordwrap: 500 }) });
     }
 
     clearContent() {
