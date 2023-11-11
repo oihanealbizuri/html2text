@@ -1,6 +1,6 @@
 {
   "name": "html2text",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "author": "Oihane Albizuri <oihanealbizuri@gmail.com>",
   "description": "HTML to formatted text converter",
@@ -23,7 +23,7 @@
     "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
     "electron": "^27.0.4",
-    "electron-builder": "^24.6.4",
+    "electron-builder": "^23.6.0",
     "electronmon": "^2.0.2",
     "eslint-config-react-app": "^7.0.1",
     "wait-on": "^7.1.0"
