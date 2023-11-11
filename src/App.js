@@ -75,8 +75,8 @@ class App extends Component {
                             <img className={'logo'} src={logo} alt={'html2text logo'}/>
                             <Switch
                                 className={'dayNightSwitch'}
-                                innerLabel="day"
-                                innerLabelChecked="night"
+                                innerLabel={'day'}
+                                innerLabelChecked={'night'}
                                 checked={this.state.nightTheme}
                                 large={true}
                                 onChange={() => this.changeTheme()}
@@ -94,7 +94,7 @@ class App extends Component {
                         <div className={'controlPanel'} key="controlPanel">
                             <Button
                                 className={'convertButton'}
-                                active={true}
+                                active={!this.state.nightTheme}
                                 minimal={true}
                                 outlined={true}
                                 intent={Intent.PRIMARY}
@@ -103,7 +103,7 @@ class App extends Component {
                             />
                             <Button
                                 className={'clearButton'}
-                                active={true}
+                                active={!this.state.nightTheme}
                                 minimal={true}
                                 outlined={true}
                                 intent={Intent.DANGER}
