@@ -1,6 +1,6 @@
 {
   "short_name": "html2text",
-  "name": "HTML to plain text converter",
+  "name": "HTML to formatted text converter",
   "icons": [
     {
       "src": "favicon.ico",
