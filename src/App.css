@@ -43,7 +43,18 @@
     border-radius: 10px;
 }
 
+.textOutput {
+    height: inherit !important;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    overflow: auto;
+    word-wrap: break-word;
+}
+
 body {
+    color: rgba(0, 0, 0, 0.8) !important;
     background-color: #F7E8D3;
 }
 

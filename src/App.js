@@ -4,7 +4,8 @@ import GridLayout from "react-grid-layout";
 import { Intent, TextArea, Button, Switch, FocusStyleManager } from "@blueprintjs/core";
 import logo from "./header_logo.png";
 import { ThemeProvider } from "styled-components";
-import { convert } from "html-to-text";
+import ReactHtmlParser from 'html-react-parser';
+import DOMPurify from 'dompurify';
 import { lightTheme, darkTheme } from './theme';
 import { GlobalStyles } from './global';
 
@@ -32,7 +33,9 @@ class App extends Component {
 
     convertToPlainText() {
         const { htmlText } = this.state;
-        this.setState({ plainText: convert(htmlText, { wordwrap: 500 }) });
+        const sanitizedHTML = this.sanitizeHTML(htmlText);
+        const parsedHTML = ReactHtmlParser(sanitizedHTML);
+        this.setState({ plainText: parsedHTML });
     }
 
     clearContent() {
@@ -45,6 +48,10 @@ class App extends Component {
     changeTheme() {
         this.setState({ nightTheme: !this.state.nightTheme });
     }
+
+    sanitizeHTML = (html) => {
+        return DOMPurify.sanitize(html);
+    };
 
     render() {
         const layout = [
@@ -105,13 +112,9 @@ class App extends Component {
                             />
                         </div>
                         <div className={"plainText"} key="plainText">
-                            <TextArea
-                                className={"textInput bp4-small"}
-                                readOnly={true}
-                                fill={true}
-                                intent={Intent.NONE}
-                                value={this.state.plainText}
-                            />
+                            <div className={"textOutput bp4-small"}>
+                                {this.state.plainText}
+                            </div>
                         </div>
                     </GridLayout>
                 </>
