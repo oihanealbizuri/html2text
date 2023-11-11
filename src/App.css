@@ -5,49 +5,49 @@
 @import 'react-resizable/css/styles.css';
 
 .mainLayout {
-  height: content-box;
-  max-height: content-box;
+    height: content-box;
+    max-height: content-box;
 }
 
 .header {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo {
-  height: 95%;
-  width: auto;
+    height: 95%;
+    width: auto;
 }
 
 .dayNightSwitch {
-  position: absolute;
-  right: 5px;
+    position: absolute;
+    right: 5px;
 }
 
 .controlPanel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .convertButton, .clearButton {
-  margin: 10px auto;
-  border-radius: 7px;
+    margin: 10px auto;
+    border-radius: 7px;
 }
 
 .textInput {
-  height: inherit !important;
-  border-radius: 10px;
+    height: inherit !important;
+    border-radius: 10px;
 }
 
 body {
-  background-color: #F7E8D3;
+    background-color: #F7E8D3;
 }
 
 textarea {
-  resize: none;
+    resize: none;
 }
 
