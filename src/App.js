@@ -1,9 +1,9 @@
 import './App.css';
-import React, { Component } from "react";
-import GridLayout from "react-grid-layout";
-import { Intent, TextArea, Button, Switch, FocusStyleManager } from "@blueprintjs/core";
-import logo from "./header_logo.png";
-import { ThemeProvider } from "styled-components";
+import React, { Component } from 'react';
+import GridLayout from 'react-grid-layout';
+import { Intent, TextArea, Button, Switch, FocusStyleManager } from '@blueprintjs/core';
+import logo from './header_logo.png';
+import { ThemeProvider } from 'styled-components';
 import ReactHtmlParser from 'html-react-parser';
 import DOMPurify from 'dompurify';
 import { lightTheme, darkTheme } from './theme';
@@ -16,8 +16,8 @@ class App extends Component {
         super(props);
 
         this.state = {
-            htmlText: "",
-            plainText: "",
+            htmlText: '',
+            plainText: '',
             nightTheme: false
         };
 
@@ -40,8 +40,8 @@ class App extends Component {
 
     clearContent() {
         this.setState({
-            htmlText: "",
-            plainText: ""
+            htmlText: '',
+            plainText: ''
         });
     }
 
@@ -55,10 +55,10 @@ class App extends Component {
 
     render() {
         const layout = [
-            { i: "header", x: 0, y: 0, w: 11, h: 5, static: true },
-            { i: "htmlText", x: 0, y: 5, w: 5.2, h: 32, static: true },
-            { i: "controlPanel", x: 5.2, y: 5, w: 0.6, h: 32, static: true },
-            { i: "plainText", x: 5.8, y: 5, w: 5.2, h: 32, static: true }
+            { i: 'header', x: 0, y: 0, w: 11, h: 5, static: true },
+            { i: 'htmlText', x: 0, y: 5, w: 5.2, h: 32, static: true },
+            { i: 'controlPanel', x: 5.2, y: 5, w: 0.6, h: 32, static: true },
+            { i: 'plainText', x: 5.8, y: 5, w: 5.2, h: 32, static: true }
         ];
         return (
             <ThemeProvider theme={this.state.nightTheme ? darkTheme : lightTheme}>
@@ -71,10 +71,10 @@ class App extends Component {
                         rowHeight={5}
                         width={800}
                     >
-                        <div className={"header"} key="header">
-                            <img className={"logo"} src={logo} alt={"html2text logo"}/>
+                        <div className={'header'} key="header">
+                            <img className={'logo'} src={logo} alt={'html2text logo'}/>
                             <Switch
-                                className={"dayNightSwitch"}
+                                className={'dayNightSwitch'}
                                 innerLabel="day"
                                 innerLabelChecked="night"
                                 checked={this.state.nightTheme}
@@ -82,37 +82,37 @@ class App extends Component {
                                 onChange={() => this.changeTheme()}
                             />
                         </div>
-                        <div className={"htmlText"} key="htmlText">
+                        <div className={'htmlText'} key="htmlText">
                             <TextArea
-                                className={"textInput bp4-small"}
+                                className={'textInput bp4-small'}
                                 fill={true}
                                 intent={Intent.PRIMARY}
                                 onChange={this.handleHtmlChange}
                                 value={this.state.htmlText}
                             />
                         </div>
-                        <div className={"controlPanel"} key="controlPanel">
+                        <div className={'controlPanel'} key="controlPanel">
                             <Button
-                                className={"convertButton"}
+                                className={'convertButton'}
                                 active={true}
                                 minimal={true}
                                 outlined={true}
                                 intent={Intent.PRIMARY}
                                 onClick={() => this.convertToPlainText()}
-                                icon={"circle-arrow-right"}
+                                icon={'circle-arrow-right'}
                             />
                             <Button
-                                className={"clearButton"}
+                                className={'clearButton'}
                                 active={true}
                                 minimal={true}
                                 outlined={true}
                                 intent={Intent.DANGER}
                                 onClick={() => this.clearContent()}
-                                icon={"trash"}
+                                icon={'trash'}
                             />
                         </div>
-                        <div className={"plainText"} key="plainText">
-                            <div className={"textOutput bp4-small"}>
+                        <div className={'plainText'} key="plainText">
+                            <div className={'textOutput bp4-small'}>
                                 {this.state.plainText}
                             </div>
                         </div>
