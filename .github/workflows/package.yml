@@ -1,0 +1,82 @@
+name: Package
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-on-linux:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ '16.x' ]
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v4
+
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Node.js dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Package linux
+        run: npm run electron:package:linux
+
+  build-on-windows:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        node-version: [ '16.x' ]
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v4
+
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Node.js dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Package windows
+        run: npm run electron:package:win
+
+  build-on-mac:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        node-version: [ '16.x' ]
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v4
+
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Node.js dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Package windows
+        run: npm run electron:package:mac
