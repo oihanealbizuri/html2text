@@ -12,3 +12,5 @@ Windows.
 ![Daylight mode](./public/assets/daylight.png)
 <br>
 ![Night mode](./public/assets/night.png)
+
+![visitors](https://api.visitorbadge.io/api/visitors?path=oihanealbizuri%2Fhtml2text&countColor=%23263759)
