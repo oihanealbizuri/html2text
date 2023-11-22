@@ -4,7 +4,7 @@ export const GlobalStyles = createGlobalStyle`
   *,
   *::after,
   *::before {
-    box-sizing: border-box;    
+    box-sizing: border-box;
   }
 
   body {
