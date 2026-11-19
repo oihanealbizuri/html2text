@@ -4,9 +4,16 @@
 @import 'react-grid-layout/css/styles.css';
 @import 'react-resizable/css/styles.css';
 
+#root {
+    display: flex;
+    min-height: 100vh;
+}
+
 .mainLayout {
     height: content-box;
     max-height: content-box;
+    width: 800px;
+    margin: auto;
 }
 
 .header {
